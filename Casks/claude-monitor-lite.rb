@@ -3,7 +3,7 @@ cask "claude-monitor-lite" do
   name "claude-monitor-lite"
   desc "Lightweight macOS menu bar monitor for Claude usage"
   homepage "https://github.com/wickes1/claude-monitor-lite"
-  version "0.1.1"
+  version "0.1.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,11 +14,17 @@ cask "claude-monitor-lite" do
   on_macos do
     on_intel do
       url "https://github.com/wickes1/claude-monitor-lite/releases/download/v#{version}/claude-monitor-lite_Darwin_x86_64.tar.gz"
-      sha256 "b879658273e4f4956196287b58e3500063f38c370658b6845dceb2e1d06de719"
+      sha256 "d6361e23636e7e08fd867bba4595b96806ddd3b6ed2069c7cb978d3102862392"
     end
     on_arm do
       url "https://github.com/wickes1/claude-monitor-lite/releases/download/v#{version}/claude-monitor-lite_Darwin_arm64.tar.gz"
-      sha256 "403ae36273a75cb68abd2786578c937aae6ca1084c72abdc8ca75cd23a203330"
+      sha256 "b4e68a469d49d4f8408021b024270f31f09355cba5b8d1274b192e24dc61e37c"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/claude-monitor-lite"]
     end
   end
 
