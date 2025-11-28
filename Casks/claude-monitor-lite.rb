@@ -3,7 +3,7 @@ cask "claude-monitor-lite" do
   name "claude-monitor-lite"
   desc "Lightweight menu bar monitor for Claude usage"
   homepage "https://github.com/wickes1/claude-monitor-lite"
-  version "0.1.5"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,11 +14,11 @@ cask "claude-monitor-lite" do
   on_macos do
     on_intel do
       url "https://github.com/wickes1/claude-monitor-lite/releases/download/v#{version}/claude-monitor-lite_Darwin_x86_64.tar.gz"
-      sha256 "0cde2e7ef8c9acbe1ca14e9726561bac62a940df9d02665d6e8bfa0a914a15fd"
+      sha256 "f396149c255f934a972048da9027ac7580033fd93cbf7cd809f6fa7c95e5980e"
     end
     on_arm do
       url "https://github.com/wickes1/claude-monitor-lite/releases/download/v#{version}/claude-monitor-lite_Darwin_arm64.tar.gz"
-      sha256 "daaf4b546d891a2be55f71b1adc0882715f956f81f0eca3edc326ad73118515f"
+      sha256 "7458608d1e7d09f165bd70ca857f0cbdb5b6ffd36bb6250dccf3c45f5c5c5dfb"
     end
   end
 
