@@ -1,6 +1,6 @@
 cask "komet" do
-  version "0.1.7"
-  sha256 "e5d841b8eaffae7b4b63ce2c69d1651b4ca76b01893c413b98865c3453d7b601"
+  version "0.1.8"
+  sha256 "4b474dae9cc3301d31fba17967120b8ec7fa46292fef6f927a9f8358ed55b294"
 
   url "https://github.com/wickes1/Komet/releases/download/v#{version}/Komet.dmg"
   name "Komet"
@@ -8,7 +8,6 @@ cask "komet" do
   homepage "https://github.com/wickes1/Komet"
 
   depends_on macos: ">= :ventura"
-
 
   app "Komet.app"
 
