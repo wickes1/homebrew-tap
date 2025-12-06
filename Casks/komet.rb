@@ -1,6 +1,6 @@
 cask "komet" do
-  version "0.1.9"
-  sha256 "7499df12a84b4b0610d5160518e2d44c28529ae04331e6b2a349015d689c276e"
+  version "0.1.10"
+  sha256 "c9190b34acb6161bf124b1ded1c0b307d4eccdf7551d6a64b466a9321424b001"
 
   url "https://github.com/wickes1/Komet/releases/download/v#{version}/Komet.dmg"
   name "Komet"
