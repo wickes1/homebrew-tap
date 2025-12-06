@@ -9,7 +9,6 @@ cask "komet" do
 
   depends_on macos: ">= :ventura"
 
-  conflicts_with cask: "komet"
 
   app "Komet.app"
 
