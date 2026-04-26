@@ -1,6 +1,6 @@
 cask "komet" do
-  version "0.1.12"
-  sha256 "6e35fddb0e08159aba16a00406d70c943fd1e89079153134fac3a731af7cd842"
+  version "0.1.13"
+  sha256 "aefbfb41a8348bed36f1a56a27626287763f25bf346197da47ebda79ba309afe"
 
   url "https://github.com/wickes1/Komet/releases/download/v#{version}/Komet.dmg"
   name "Komet"
@@ -16,6 +16,9 @@ cask "komet" do
   end
 
   postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Komet.app"],
+                   must_succeed: false
     system_command "open", args: ["#{appdir}/Komet.app"]
   end
 
