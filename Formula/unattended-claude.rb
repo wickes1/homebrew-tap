@@ -40,12 +40,16 @@ class UnattendedClaude < Formula
   end
 
   def install
-    # Stage the bun binary into libexec/vendor/bun.
+    # Stage the bun binary into libexec/vendor/bun. The zip layout differs
+    # subtly across Homebrew versions (sometimes the top-level
+    # `bun-<platform>/` dir is preserved, sometimes brew CDs into it during
+    # staging), so search recursively for the binary instead of hard-coding
+    # the path.
     resource("bun").stage do
-      bun_dir = Pathname.glob("bun-*").first
-      odie "Bun resource layout unexpected — no bun-* directory found" if bun_dir.nil?
+      bun_bin = Pathname.glob("**/bun").find { |p| p.file? }
+      odie "Could not locate bun binary inside the staged resource" if bun_bin.nil?
       (libexec/"vendor").mkpath
-      cp bun_dir/"bun", libexec/"vendor/bun"
+      cp bun_bin, libexec/"vendor/bun"
       chmod 0755, libexec/"vendor/bun"
     end
 
