@@ -7,7 +7,7 @@ cask "komet" do
   desc "Minimal, lightning-fast application launcher for macOS"
   homepage "https://github.com/wickes1/Komet"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Komet.app"
 
