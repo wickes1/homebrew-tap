@@ -5,21 +5,21 @@
 class JoplinMcp < Formula
   desc "MCP server connecting AI assistants to Joplin for note management"
   homepage "https://github.com/wickes1/joplin-mcp"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.2.0/joplin-mcp_Darwin_x86_64.tar.gz"
-      sha256 "3f45961e97403103e4c247d8e95621a195c19961ce99efa958227e864611dd72"
+      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.3.0/joplin-mcp_Darwin_x86_64.tar.gz"
+      sha256 "7110db2564d66e4a038e44b138cadbb82dca4c8fa8727d21d2968ace9f33e39f"
 
       define_method(:install) do
         bin.install "joplin-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.2.0/joplin-mcp_Darwin_arm64.tar.gz"
-      sha256 "819a11c1d18da528ae836e4ea5800329c46f1d067adeff6b2debc5b8e2d392ee"
+      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.3.0/joplin-mcp_Darwin_arm64.tar.gz"
+      sha256 "e87a72fe7ef7216b836eb2c5c448b23511bd6f3be07a3f2f49effe5fca7c0942"
 
       define_method(:install) do
         bin.install "joplin-mcp"
@@ -29,15 +29,15 @@ class JoplinMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.2.0/joplin-mcp_Linux_x86_64.tar.gz"
-      sha256 "2a9cf7690c59b7ad860e46fc4618b7258694bb4fb3f22f3304f3d645558b7e82"
+      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.3.0/joplin-mcp_Linux_x86_64.tar.gz"
+      sha256 "a18229762fbe75c25b9df53e3b684055eaee3c6b1c69533eb26eee2a6152d0bb"
       define_method(:install) do
         bin.install "joplin-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.2.0/joplin-mcp_Linux_arm64.tar.gz"
-      sha256 "e6a41334c9428df875a359767d011a565472265b1a75a09fc17f9da4ad5eaeba"
+      url "https://github.com/wickes1/joplin-mcp/releases/download/v0.3.0/joplin-mcp_Linux_arm64.tar.gz"
+      sha256 "1bd8c676f6d2fd7f5c54460a36839af3c2e7d0f718d907f088bf78c420b45256"
       define_method(:install) do
         bin.install "joplin-mcp"
       end
