@@ -11,15 +11,13 @@ cask "komet" do
 
   app "Komet.app"
 
-  preflight do
-    system_command "pkill", args: ["-f", "Komet.app"], must_succeed: false
+  preflight_steps do
+    terminate_process "Komet.app", match: :full
   end
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Komet.app"],
-                   must_succeed: false
-    system_command "open", args: ["#{appdir}/Komet.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Komet.app"], must_succeed: false
+    run "/usr/bin/open", args: ["{{appdir}}/Komet.app"], must_succeed: false
   end
 
   caveats <<~EOS
