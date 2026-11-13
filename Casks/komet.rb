@@ -15,12 +15,16 @@ cask "komet" do
     terminate_process "Komet.app", match: :full
   end
 
+  # Homebrew runs these steps in a sandbox that cannot launch an app (`open` fails there), so the cask
+  # only clears the quarantine flag; the caveats say how to start Komet.
   postflight_steps do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Komet.app"], must_succeed: false
-    run "/usr/bin/open", args: ["{{appdir}}/Komet.app"], must_succeed: false
   end
 
   caveats <<~EOS
+    Start Komet now, and again after every upgrade (an upgrade quits it):
+      open -a Komet
+
     Komet is unsigned. If blocked by Gatekeeper:
     1. Go to System Settings → Privacy & Security
     2. Click "Open Anyway" next to the Komet warning
