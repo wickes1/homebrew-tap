@@ -1,7 +1,7 @@
 # Homebrew cask, filled in by scripts/release.sh (version, sha256, repo). Goes into a tap as Casks/beckon.rb.
 cask "beckon" do
-  version "0.2.0"
-  sha256 "d004426c21ec08e0d85776b9ec707f32291567ef7b4b92fd501313d8ba346ee8"
+  version "0.2.1"
+  sha256 "4f0b9bf1f303dfd7edd97995f1ffca00b5348e0c3ea01caf244800f8fef0c38a"
 
   url "https://github.com/wickes1/beckon/releases/download/v#{version}/Beckon-#{version}.zip"
   name "beckon"
@@ -17,7 +17,7 @@ cask "beckon" do
   # CLI inside it. Starting the app from here is not possible: Homebrew runs these steps in a sandbox that
   # cannot reach LaunchServices (`open` fails with kLSNoExecutableErr), hence the caveat.
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Beckon.app"], must_succeed: false
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Beckon.app"]
   end
 
   uninstall quit: "dev.wickend.beckon"
@@ -25,6 +25,7 @@ cask "beckon" do
   zap trash: [
     "~/Library/Application Support/beckon",
     "~/Library/Logs/beckon.log",
+    "~/Library/Preferences/dev.wickend.beckon.plist",
   ]
 
   caveats <<~EOS
@@ -33,7 +34,7 @@ cask "beckon" do
 
     Start it now, and again after every upgrade (an upgrade quits it):
       open -a Beckon
-    Menu bar ✳ → Open at Login starts it with the Mac.
+    Menu bar icon → Open at Login starts it with the Mac.
 
     Wire beckon into Claude Code with its plugin, then check the setup:
       claude plugin marketplace add wickes1/beckon
