@@ -1,6 +1,6 @@
 cask "komet" do
-  version "0.1.15"
-  sha256 "014c616ad4a565fc48709a1cb5ae565b0df5ecafb9270863dcb0557f33a8c23b"
+  version "0.2.0"
+  sha256 "252f0793ce641379ab22514c6a55c34124a774c8b7f579b5cb234c608810ee32"
 
   url "https://github.com/wickes1/Komet/releases/download/v#{version}/Komet.dmg"
   name "Komet"
@@ -25,16 +25,12 @@ cask "komet" do
     Start Komet now, and again after every upgrade (an upgrade quits it):
       open -a Komet
 
+    Komet needs no permissions. Its hotkey is Cmd+Space: turn off Spotlight's
+    shortcut in System Settings → Keyboard → Keyboard Shortcuts → Spotlight.
+
     Komet is unsigned. If blocked by Gatekeeper:
     1. Go to System Settings → Privacy & Security
     2. Click "Open Anyway" next to the Komet warning
-
-    Komet requires Accessibility permissions:
-    System Settings → Privacy & Security → Accessibility → Enable Komet
-
-    After upgrade, re-grant Accessibility permission:
-    1. Remove Komet from Accessibility list
-    2. Re-add Komet
   EOS
 
   zap trash: [
