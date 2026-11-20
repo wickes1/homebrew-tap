@@ -5,7 +5,7 @@ class UnattendedClaude < Formula
   desc "Demand-shifting unattended Claude Code runtime — uses your Claude Pro/Max subscription"
   homepage "https://github.com/wickes1/unattended-claude"
   url "https://github.com/wickes1/unattended-claude/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "40ac31028d82576ad54a39eee54d766e2d522372af0c1b078980a6cbd76a37b1"
+  sha256 "71ac8fa1be92699a2e71647958c161777a8251b2dd59981ffe5f8616f614e30b"
   license "MIT"
   version "0.1.0"
 
