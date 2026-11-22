@@ -1,6 +1,6 @@
 cask "komet" do
-  version "0.2.1"
-  sha256 "28a15530125ea0c690cf7536d07cbee6ccc1a1ad7be5b371383a5bb4ed75ee17"
+  version "0.2.2"
+  sha256 "3130ed01628153241755beaf3b739f90ab1fd2ecb19d242312f6daa14dfedc40"
 
   url "https://github.com/wickes1/Komet/releases/download/v#{version}/Komet.dmg"
   name "Komet"
@@ -10,10 +10,6 @@ cask "komet" do
   depends_on macos: :ventura
 
   app "Komet.app"
-
-  preflight_steps do
-    terminate_process "Komet.app", match: :full
-  end
 
   # Homebrew runs these steps in a sandbox that cannot launch an app (`open` fails there), so the cask
   # only clears the quarantine flag; the caveats say how to start Komet.
