@@ -1,7 +1,7 @@
 # Homebrew cask, filled in by scripts/release.sh (version, sha256, repo). Goes into a tap as Casks/beckon.rb.
 cask "beckon" do
-  version "0.3.0"
-  sha256 "d0a6d7df48a5e340608fc8fd1b3a51b8b3a806321beb756030f9c4dcc9c07436"
+  version "0.4.0"
+  sha256 "3fc04f6b1347384bb01118c44ed7dbbb75c2ba885a0492e097cd6dfb3200bf5a"
 
   url "https://github.com/wickes1/beckon/releases/download/v#{version}/Beckon-#{version}.zip"
   name "beckon"
